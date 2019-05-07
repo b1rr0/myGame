@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #0F0646;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerUpdate">
+    <children>
+        <ImageView fitHeight="900.0" fitWidth="1440.0" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@Fonarmor.jpg" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="960.0" fitWidth="1498.0" layoutX="-36.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/-2.png" />
+         </image>
+      </ImageView>
+        <Button fx:id="buttomVhod" layoutX="1182.0" layoutY="735.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="190.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="Вход" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font name="Bodoni 72 Bold" size="47.0" />
+            </font>
+        </Button>
+      <ImageView fx:id="hepoImg" fitHeight="519.0" fitWidth="332.0" layoutX="905.0" layoutY="139.0">
+         <image>
+            <Image url="@../img/bers.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="122.0" fitWidth="126.0" layoutX="134.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Bronya.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="bronyaText" layoutX="261.0" layoutY="289.0" prefHeight="58.0" prefWidth="314.0" text="Броня" textFill="RED">
+         <font>
+            <Font name="Bodoni 72 Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label fx:id="bronyaText1" layoutX="243.0" layoutY="344.0" prefHeight="58.0" prefWidth="600.0" text="Увеличивает сопротивление урону" textFill="#69ebae">
+         <font>
+            <Font name="Bodoni 72 Bold" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="124.0" fitWidth="123.0" layoutX="120.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Shlem.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="122.0" fitWidth="131.0" layoutX="126.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Ponoji.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="116.0" fitWidth="111.0" layoutX="126.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Nojki.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="111.0" fitWidth="161.0" layoutX="134.0" layoutY="657.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Sword.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="breyserText" layoutX="254.0" layoutY="408.0" prefHeight="55.0" prefWidth="329.0" text="Брейсер" textFill="RED">
+         <font>
+            <Font name="Bodoni 72 Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label fx:id="bnaruchiText" layoutX="232.0" layoutY="538.0" prefHeight="58.0" prefWidth="432.0" text="Тапки" textFill="RED">
+         <font>
+            <Font name="Bodoni 72 Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label fx:id="orujieText" layoutX="237.0" layoutY="658.0" prefHeight="67.0" prefWidth="329.0" text="Оружие" textFill="RED">
+         <font>
+            <Font name="Bodoni 72 Bold" size="46.0" />
+         </font>
+      </Label>
+      <Label fx:id="shlemText" layoutX="237.0" layoutY="173.0" prefHeight="55.0" prefWidth="329.0" text="Шлем" textFill="RED">
+         <font>
+            <Font name="Bodoni 72 Bold" size="38.0" />
+         </font>
+      </Label>
+      <Label fx:id="bronyaText11" layoutX="237.0" layoutY="216.0" prefHeight="58.0" prefWidth="579.0" text="Увеличивает сопротивление критам" textFill="#69ebae">
+         <font>
+            <Font name="Bodoni 72 Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="bronyaText12" layoutX="243.0" layoutY="465.0" prefHeight="58.0" prefWidth="600.0" text="Увеличивает укланение" textFill="#69ebae">
+         <font>
+            <Font name="Bodoni 72 Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="bronyaText121" layoutX="238.0" layoutY="591.0" prefHeight="58.0" prefWidth="600.0" text="Увеличивает силу крита" textFill="#69ebae">
+         <font>
+            <Font name="Bodoni 72 Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="bronyaText1211" layoutX="291.0" layoutY="712.0" prefHeight="67.0" prefWidth="543.0" text="Увеличивает урон и шанс крита" textFill="#69ebae">
+         <font>
+            <Font name="Bodoni 72 Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttomUluchShlem" layoutX="622.0" layoutY="226.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2c2c39; -fx-background-radius: 10;" text="Улучшить" textFill="#f20000" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni 72 Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttomUluchBronya" layoutX="616.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2c2c39#2c2c39; -fx-background-radius: 10;" text="Улучшить" textFill="RED" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni 72 Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttomUluchPonoji" layoutX="616.0" layoutY="471.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2c2c39#2c2c39; -fx-background-radius: 10;" text="Улучшить" textFill="RED" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni 72 Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttomUluchNogi" layoutX="622.0" layoutY="589.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2c2c39#2c2c39; -fx-background-radius: 10;" text="Улучшить" textFill="RED" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni 72 Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttomUluchOrijie" layoutX="622.0" layoutY="712.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2c2c39; -fx-background-radius: 10;" text="Улучшить" textFill="RED" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni 72 Bold" size="20.0" />
+         </font>
+      </Button>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <Label fx:id="LabelMany" layoutX="243.0" layoutY="61.0" text="123213213" textFill="#d9e80e">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="goldShelm" layoutX="622.0" layoutY="182.0" prefHeight="55.0" prefWidth="123.0" text="12" textFill="#eee424">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+      <Label fx:id="goldBronya" layoutX="615.0" layoutY="306.0" prefHeight="53.0" prefWidth="148.0" text="12" textFill="#eee424">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+      <Label fx:id="goldBreacer" layoutX="616.0" layoutY="424.0" prefHeight="47.0" prefWidth="174.0" text="Label" textFill="#eee424">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+      <Label fx:id="goldNogi" layoutX="626.0" layoutY="541.0" prefHeight="47.0" prefWidth="174.0" text="Label" textFill="#eee424">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+      <Label fx:id="goldOrujie" layoutX="626.0" layoutY="665.0" prefHeight="47.0" prefWidth="174.0" text="Label" textFill="#eee424">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+      <Label fx:id="lvl" layoutX="984.0" layoutY="657.0" prefHeight="55.0" prefWidth="222.0" text="  lvl 8" textFill="#d30808">
+         <font>
+            <Font name="Ninja Naruto" size="34.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
