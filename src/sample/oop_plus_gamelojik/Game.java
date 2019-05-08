@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import static sample.Main.tearn;
 
 public class Game {
+    public  static Human player[] = new Human[2];
     static Random rnd = new Random(System.currentTimeMillis());
 
     public static int CoinFLip() {

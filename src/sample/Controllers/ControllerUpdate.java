@@ -115,110 +115,110 @@ public class ControllerUpdate {
         Image imgSam = new Image(getClass().getResourceAsStream("../img/samurai.png"));
         Image imgBers = new Image(getClass().getResourceAsStream("../img/bers.png"));
         ///////
-        goldBreacer.setText(Game.cost(ControllerVhod.player[tearn].getBreacer()) > 65 ? "макс " :
-                Game.cost(ControllerVhod.player[tearn].getBreacer()) + " ");
-        goldBronya.setText(Game.cost(ControllerVhod.player[tearn].getDospeh()) > 65 ? "макс " :
-                Game.cost(ControllerVhod.player[tearn].getDospeh()) + " ");
-        goldOrujie.setText(Game.cost(ControllerVhod.player[tearn].getOrujie()) > 65 ? "макс " :
-                Game.cost(ControllerVhod.player[tearn].getOrujie()) + " ");
-        goldNogi.setText(Game.cost(ControllerVhod.player[tearn].getNogi()) > 65 ? "макс " :
-                +Game.cost(ControllerVhod.player[tearn].getNogi()) + " ");
-        goldShelm.setText(Game.cost(ControllerVhod.player[tearn].getShlem()) > 65 ? "макс " :
-                Game.cost(ControllerVhod.player[tearn].getShlem()) + " ");
+        goldBreacer.setText(Game.cost(Game.player[tearn].getBreacer()) > 65 ? "макс " :
+                Game.cost(Game.player[tearn].getBreacer()) + " ");
+        goldBronya.setText(Game.cost(Game.player[tearn].getDospeh()) > 65 ? "макс " :
+                Game.cost(Game.player[tearn].getDospeh()) + " ");
+        goldOrujie.setText(Game.cost(Game.player[tearn].getOrujie()) > 65 ? "макс " :
+                Game.cost(Game.player[tearn].getOrujie()) + " ");
+        goldNogi.setText(Game.cost(Game.player[tearn].getNogi()) > 65 ? "макс " :
+                +Game.cost(Game.player[tearn].getNogi()) + " ");
+        goldShelm.setText(Game.cost(Game.player[tearn].getShlem()) > 65 ? "макс " :
+                Game.cost(Game.player[tearn].getShlem()) + " ");
         ////////
-        if (ControllerVhod.player[tearn].getName().equals("Bers"))
+        if (Game.player[tearn].getName().equals("Bers"))
             hepoImg.setImage(imgBers);
-        if (ControllerVhod.player[tearn].getName().equals("Tamplier"))
+        if (Game.player[tearn].getName().equals("Tamplier"))
             hepoImg.setImage(imgTampl);
-        if (ControllerVhod.player[tearn].getName().equals("Samurai"))
+        if (Game.player[tearn].getName().equals("Samurai"))
             hepoImg.setImage(imgSam);
-        if (ControllerVhod.player[tearn].getName().equals("Valkiriya"))
+        if (Game.player[tearn].getName().equals("Valkiriya"))
             hepoImg.setImage(imgValk);
 
 
         //
-        LabelMany.setText(ControllerVhod.player[tearn].getDengi() + " ");
-        lvl.setText("lvl " + ControllerVhod.player[tearn].getLevel());
+        LabelMany.setText(Game.player[tearn].getDengi() + " ");
+        lvl.setText("lvl " + Game.player[tearn].getLevel());
         ////
-        breyserText.setText("Наручи " + ControllerVhod.player[tearn].getBreacer() + "/10");
-        shlemText.setText("Шлем " + ControllerVhod.player[tearn].getShlem() + "/10");
-        bronyaText.setText("Броня " + ControllerVhod.player[tearn].getDospeh() + "/10");
-        bnaruchiText.setText("Тапки " + ControllerVhod.player[tearn].getNogi() + "/10");
-        orujieText.setText("Оружие " + ControllerVhod.player[tearn].getOrujie() + "/10");
+        breyserText.setText("Наручи " + Game.player[tearn].getBreacer() + "/10");
+        shlemText.setText("Шлем " + Game.player[tearn].getShlem() + "/10");
+        bronyaText.setText("Броня " + Game.player[tearn].getDospeh() + "/10");
+        bnaruchiText.setText("Тапки " + Game.player[tearn].getNogi() + "/10");
+        orujieText.setText("Оружие " + Game.player[tearn].getOrujie() + "/10");
 
         //////
         buttomUluchShlem.setOnAction(
                 event -> {
-                    System.out.println(ControllerVhod.player[tearn].getDengi());
-                    if ((ControllerVhod.player[tearn].getDengi() >= Game.cost(ControllerVhod.player[tearn].getShlem()))
-                            && (ControllerVhod.player[tearn]).getShlem() < 10) {
-                        ControllerVhod.player[tearn].buy(Game.cost(ControllerVhod.player[tearn].getShlem()));
-                        ControllerVhod.player[tearn].upShlem();
-                        System.out.println(ControllerVhod.player[0].getName());
-                        System.out.println(ControllerVhod.player[0].getShlem());
-                        shlemText.setText("Шлем " + ControllerVhod.player[tearn].getShlem() + "/10");
-                        LabelMany.setText(ControllerVhod.player[tearn].getDengi() + " ");
-                        goldShelm.setText(Game.cost(ControllerVhod.player[tearn].getShlem()) > 65 ? "макс " :
-                                Game.cost(ControllerVhod.player[tearn].getShlem()) + " ");
+                    System.out.println(Game.player[tearn].getDengi());
+                    if ((Game.player[tearn].getDengi() >= Game.cost(Game.player[tearn].getShlem()))
+                            && (Game.player[tearn]).getShlem() < 10) {
+                        Game.player[tearn].buy(Game.cost(Game.player[tearn].getShlem()));
+                        Game.player[tearn].upShlem();
+                        System.out.println(Game.player[0].getName());
+                        System.out.println(Game.player[0].getShlem());
+                        shlemText.setText("Шлем " + Game.player[tearn].getShlem() + "/10");
+                        LabelMany.setText(Game.player[tearn].getDengi() + " ");
+                        goldShelm.setText(Game.cost(Game.player[tearn].getShlem()) > 65 ? "макс " :
+                                Game.cost(Game.player[tearn].getShlem()) + " ");
                     }
                 });
         //////
         buttomUluchBronya.setOnAction(
                 event -> {
-                    System.out.println(ControllerVhod.player[tearn].getDengi());
-                    if ((ControllerVhod.player[tearn].getDengi() >= Game.cost(ControllerVhod.player[tearn].getDospeh()))
-                            && (ControllerVhod.player[tearn]).getDospeh() < 10) {
-                        ControllerVhod.player[tearn].buy(Game.cost(ControllerVhod.player[tearn].getDospeh()));
-                        ControllerVhod.player[tearn].upDospeh();
-                        bronyaText.setText("Броня " + ControllerVhod.player[tearn].getDospeh() + "/10");
-                        LabelMany.setText(ControllerVhod.player[tearn].getDengi() + " ");
-                        goldBronya.setText(Game.cost(ControllerVhod.player[tearn].getDospeh()) > 65 ? "макс " :
-                                Game.cost(ControllerVhod.player[tearn].getDospeh()) + " ");
+                    System.out.println(Game.player[tearn].getDengi());
+                    if ((Game.player[tearn].getDengi() >= Game.cost(Game.player[tearn].getDospeh()))
+                            && (Game.player[tearn]).getDospeh() < 10) {
+                        Game.player[tearn].buy(Game.cost(Game.player[tearn].getDospeh()));
+                        Game.player[tearn].upDospeh();
+                        bronyaText.setText("Броня " + Game.player[tearn].getDospeh() + "/10");
+                        LabelMany.setText(Game.player[tearn].getDengi() + " ");
+                        goldBronya.setText(Game.cost(Game.player[tearn].getDospeh()) > 65 ? "макс " :
+                                Game.cost(Game.player[tearn].getDospeh()) + " ");
                     }
                 });
         //////
         buttomUluchNogi.setOnAction(
                 event -> {
-                    if ((ControllerVhod.player[tearn].getDengi() >= Game.cost(ControllerVhod.player[tearn].getNogi()))
-                            && (ControllerVhod.player[tearn]).getNogi() < 10) {
-                        ControllerVhod.player[tearn].buy(Game.cost(ControllerVhod.player[tearn].getNogi()));
-                        ControllerVhod.player[tearn].upNogi();
-                        bnaruchiText.setText("Тапки " + ControllerVhod.player[tearn].getNogi() + "/10");
-                        LabelMany.setText(ControllerVhod.player[tearn].getDengi() + " ");
-                        goldNogi.setText(Game.cost(ControllerVhod.player[tearn].getNogi()) > 65 ? "макс " :
-                                Game.cost(ControllerVhod.player[tearn].getNogi()) + " ");
+                    if ((Game.player[tearn].getDengi() >= Game.cost(Game.player[tearn].getNogi()))
+                            && (Game.player[tearn]).getNogi() < 10) {
+                        Game.player[tearn].buy(Game.cost(Game.player[tearn].getNogi()));
+                        Game.player[tearn].upNogi();
+                        bnaruchiText.setText("Тапки " + Game.player[tearn].getNogi() + "/10");
+                        LabelMany.setText(Game.player[tearn].getDengi() + " ");
+                        goldNogi.setText(Game.cost(Game.player[tearn].getNogi()) > 65 ? "макс " :
+                                Game.cost(Game.player[tearn].getNogi()) + " ");
                     }
                 });
 /////
         buttomUluchPonoji.setOnAction(
                 event -> {
-                    if ((ControllerVhod.player[tearn].getDengi() >= Game.cost(ControllerVhod.player[tearn].getBreacer()))
-                            && (ControllerVhod.player[tearn]).getBreacer() < 10) {
-                        ControllerVhod.player[tearn].buy(Game.cost(ControllerVhod.player[tearn].getBreacer()));
-                        ControllerVhod.player[tearn].upBreacer();
-                        breyserText.setText("Наручи " + ControllerVhod.player[tearn].getBreacer() + "/10");
-                        LabelMany.setText(ControllerVhod.player[tearn].getDengi() + " ");
-                        goldBreacer.setText(Game.cost(ControllerVhod.player[tearn].getBreacer()) > 65 ? "макс " :
-                                Game.cost(ControllerVhod.player[tearn].getBreacer()) + " ");
+                    if ((Game.player[tearn].getDengi() >= Game.cost(Game.player[tearn].getBreacer()))
+                            && (Game.player[tearn]).getBreacer() < 10) {
+                        Game.player[tearn].buy(Game.cost(Game.player[tearn].getBreacer()));
+                        Game.player[tearn].upBreacer();
+                        breyserText.setText("Наручи " + Game.player[tearn].getBreacer() + "/10");
+                        LabelMany.setText(Game.player[tearn].getDengi() + " ");
+                        goldBreacer.setText(Game.cost(Game.player[tearn].getBreacer()) > 65 ? "макс " :
+                                Game.cost(Game.player[tearn].getBreacer()) + " ");
                     }
                 });
 ///
         buttomUluchOrijie.setOnAction(
                 event -> {
-                    if ((ControllerVhod.player[tearn].getDengi() >= Game.cost(ControllerVhod.player[tearn].getOrujie()))
-                            && (ControllerVhod.player[tearn]).getOrujie() < 10) {
-                        ControllerVhod.player[tearn].buy(Game.cost(ControllerVhod.player[tearn].getOrujie()));
-                        ControllerVhod.player[tearn].upOrujie();
-                        orujieText.setText("Оружие " + ControllerVhod.player[tearn].getOrujie() + "/10");
-                        LabelMany.setText(ControllerVhod.player[tearn].getDengi() + " ");
-                        goldOrujie.setText(Game.cost(ControllerVhod.player[tearn].getOrujie()) > 65 ? "макс " :
-                                Game.cost(ControllerVhod.player[tearn].getOrujie()) + " ");
+                    if ((Game.player[tearn].getDengi() >= Game.cost(Game.player[tearn].getOrujie()))
+                            && (Game.player[tearn]).getOrujie() < 10) {
+                        Game.player[tearn].buy(Game.cost(Game.player[tearn].getOrujie()));
+                        Game.player[tearn].upOrujie();
+                        orujieText.setText("Оружие " + Game.player[tearn].getOrujie() + "/10");
+                        LabelMany.setText(Game.player[tearn].getDengi() + " ");
+                        goldOrujie.setText(Game.cost(Game.player[tearn].getOrujie()) > 65 ? "макс " :
+                                Game.cost(Game.player[tearn].getOrujie()) + " ");
                     }
                 });
 
         buttomVhod.setOnAction(
                 event -> {
-                    db.upDate(ControllerVhod.player[tearn]);
+                    db.upDate(Game.player[tearn]);
                     if (tearn == 0) {
                         buttomVhod.getScene().getWindow().hide();
                         openNEw("/sample/Sampless/sample.fxml");

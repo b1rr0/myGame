@@ -6,7 +6,7 @@ public class Bers extends Human {
 
     public Bers(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
         super(orujie, shlem, dospeh, nogi, breacer, dengi, level, nikName);
-        setHp(200 + ((getLevel() / 3) * 70));
+        setHp(70+((getLevel()) * 50));
         setName("Bers");
     }
 
@@ -21,9 +21,8 @@ public class Bers extends Human {
             dProg++;
         }
         int s = rnd.nextInt(rez + getLevel() / 10) - (rez + getLevel() / 20);
-        System.out.println(rez + (getLevel() / 3) * 5 + s);
-        return rez + (getLevel() / 3) * 5 + s;
-
+        System.out.println("bers atack" + +rez + (getLevel()) + s);
+        return rez*2 + (getLevel()) + s;
     }
 
     public int getRezist() {

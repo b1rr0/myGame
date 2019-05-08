@@ -14,10 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.DataBase.Db;
-import sample.oop_plus_gamelojik.Bers;
-import sample.oop_plus_gamelojik.Samurai;
-import sample.oop_plus_gamelojik.Tamplier;
-import sample.oop_plus_gamelojik.Valkiriya;
+import sample.oop_plus_gamelojik.*;
 
 import static sample.Main.tearn;
 
@@ -79,20 +76,20 @@ public class ControllerChouseHero {
         buttomVhod.setOnAction(
                 event -> {
                     if (but1.isSelected())
-                        ControllerVhod.player[tearn] = new Samurai(1, 1, 1, 1, 1, 15, 1,
+                        Game.player[tearn] = new Samurai(1, 1, 1, 1, 1, 15, 1,
                                 ControllerRegistr2.newlog);
                     if (but2.isSelected())
-                        ControllerVhod.player[tearn] = new Valkiriya(1, 1, 1, 1, 1, 15, 1,
+                        Game.player[tearn] = new Valkiriya(1, 1, 1, 1, 1, 15, 1,
                                 ControllerRegistr2.newlog);
                     if (but3.isSelected())
-                        ControllerVhod.player[tearn] = new Tamplier(1, 1, 1, 1, 1, 15, 1,
+                        Game.player[tearn] = new Tamplier(1, 1, 1, 1, 1, 15, 1,
                                 ControllerRegistr2.newlog);
                     if (but4.isSelected())
-                        ControllerVhod.player[tearn] = new Bers(1, 1, 1, 1, 1, 15, 1,
+                        Game.player[tearn] = new Bers(1, 1, 1, 1, 1, 15, 1,
                                 ControllerRegistr2.newlog);
 
                     db.signUpUser(1, 1, 1, 1, 1, 15, 1, ControllerRegistr2.newlog,
-                            (int) ControllerRegistr2.newpas.hashCode(), ControllerVhod.player[tearn].getName());
+                            (int) ControllerRegistr2.newpas.hashCode(), Game.player[tearn].getName());
 
                     System.out.println("acces");
                     buttomVhod.getScene().getWindow().hide();

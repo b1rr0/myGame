@@ -7,7 +7,7 @@ public class Tamplier extends Human {
 
     public Tamplier(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
         super(orujie, shlem, dospeh, nogi, breacer, dengi, level, nikName);
-        setHp(200 + ((getLevel() / 3) * 70));
+        setHp(40 + ((getLevel()) * 50));
         setName("Tamplier");
     }
 
@@ -19,7 +19,7 @@ public class Tamplier extends Human {
             dProg++;
         }
         int s = rnd.nextInt(rez + getLevel() / 10) - (rez + getLevel() / 20);
-        return rez + (getLevel()) + s;
+        return rez*2 + (getLevel()) + s;
     }
 
     public int getRezist() {

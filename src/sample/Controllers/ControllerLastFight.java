@@ -76,33 +76,36 @@ public class ControllerLastFight {
         Image imgSamZer = new Image(getClass().getResourceAsStream("../img/SamuraiZerkalo.png"));
         Image imgBerszer = new Image(getClass().getResourceAsStream("../img/BersZerkalo.png"));
 
-        if (ControllerVhod.player[1].getName().equals("Bers"))
+        if (Game.player[1].getName().equals("Bers"))
             Pl1pict.setImage(imgBers);
-        if (ControllerVhod.player[1].getName().equals("Tamplier"))
+        if (Game.player[1].getName().equals("Tamplier"))
             Pl1pict.setImage(imgTampl);
-        if (ControllerVhod.player[1].getName().equals("Samurai"))
+        if (Game.player[1].getName().equals("Samurai"))
             Pl1pict.setImage(imgSam);
-        if (ControllerVhod.player[1].getName().equals("Valkiriya"))
+        if (Game.player[1].getName().equals("Valkiriya"))
             Pl1pict.setImage(imgValk);
 
-        if (ControllerVhod.player[0].getName().equals("Bers"))
+        if (Game.player[0].getName().equals("Bers"))
             Pl2pic.setImage(imgBerszer);
-        if (ControllerVhod.player[0].getName().equals("Tamplier"))
+        if (Game.player[0].getName().equals("Tamplier"))
             Pl2pic.setImage(imgTamplZer);
-        if (ControllerVhod.player[0].getName().equals("Samurai"))
+        if (Game.player[0].getName().equals("Samurai"))
             Pl2pic.setImage(imgSamZer);
-        if (ControllerVhod.player[0].getName().equals("Valkiriya"))
+        if (Game.player[0].getName().equals("Valkiriya"))
             Pl2pic.setImage(imgValkZer);
         // ViviodHp2.setText(ControllerVhod.player[1].getHp() + "");
         // VivodHp1.setText(ControllerVhod.player[0].getHp() + "");
 
-        Pl2nikc.setText(ControllerVhod.player[1].getNikName());
-        Pl2nikc1.setText(ControllerVhod.player[0].getNikName());
+        Pl2nikc.setText(Game.player[1].getNikName());
+        Pl2nikc1.setText(Game.player[0].getNikName());
+        VivodHp1.setText(Game.player[0].getHp() + "");
+        ViviodHp2.setText(Game.player[1].getHp() + "");
+
 
         Finish.setOnAction(event -> {
-            if (ControllerVhod.player[0].getHp() == 0 || ControllerVhod.player[1].getHp() == 0) {
-                db.upDate(ControllerVhod.player[0]);
-                db.upDate(ControllerVhod.player[1]);
+            if (Game.player[0].getHp() == 0 || Game.player[1].getHp() == 0) {
+                db.upDate(Game.player[0]);
+                db.upDate(Game.player[1]);
                 Finish.getScene().getWindow().hide();
 
             } else {
@@ -113,32 +116,32 @@ public class ControllerLastFight {
 
         nextRound.setOnAction(
                 event -> {
-                    if (ControllerVhod.player[0].getHp() > 0 && ControllerVhod.player[1].getHp() > 0) {
+                    if (Game.player[0].getHp() > 0 && Game.player[1].getHp() > 0) {
                         round.setText("Раунд " + count++);
-                        round1.setText("Сейчас бьет  " + (tearn == 1 ? ControllerVhod.player[1].getNikName() : ControllerVhod.player[0].getNikName()));
+                        round1.setText("Сейчас бьет  " + (tearn == 1 ? Game.player[1].getNikName() : Game.player[0].getNikName()));
 
                         if (tearn == 1) {
-                            int k = ControllerVhod.player[1].getHp();
-                            System.out.println(ControllerVhod.player[1].getHp() + " hp 2go");
-                            Dmg2.setText(Game.Round(ControllerVhod.player[0], ControllerVhod.player[1]));
-                            System.out.println(ControllerVhod.player[1].getHp() + " hp 2go");
-                            if (k < ControllerVhod.player[1].getHp()) {
-                                ViviodHp2.setText(k + " + " + (ControllerVhod.player[1].getHp() - k));
+                            int k = Game.player[1].getHp();
+                            System.out.println(Game.player[1].getHp() + " hp 2go");
+                            Dmg2.setText(Game.Round(Game.player[0], Game.player[1]));
+                            System.out.println(Game.player[1].getHp() + " hp 2go");
+                            if (k < Game.player[1].getHp()) {
+                                ViviodHp2.setText(k + " + " + (Game.player[1].getHp() - k));
                             }
-                            VivodHp1.setText(ControllerVhod.player[0].getHp() + "");
-                            System.out.println("bers" + ControllerVhod.player[1].hit());
-                            System.out.println(ControllerVhod.player[0].def(ControllerVhod.player[1].hit()));
+                            VivodHp1.setText(Game.player[0].getHp() + "");
+                            System.out.println("bers" + Game.player[1].hit());
+                            System.out.println(Game.player[0].def(Game.player[1].hit()));
                         } else {
-                            System.out.println(ControllerVhod.player[0].getHp() + " hp 1go");
-                            int k = ControllerVhod.player[0].getHp();
-                            Dmg1.setText(Game.Round(ControllerVhod.player[0], ControllerVhod.player[1]));
-                            System.out.println(ControllerVhod.player[0].getHp() + " hp 1go");
-                            if (k < ControllerVhod.player[0].getHp()) {
-                                VivodHp1.setText(k + " + " + (ControllerVhod.player[0].getHp() - k));
+                            System.out.println(Game.player[0].getHp() + " hp 1go");
+                            int k = Game.player[0].getHp();
+                            Dmg1.setText(Game.Round(Game.player[0], Game.player[1]));
+                            System.out.println(Game.player[0].getHp() + " hp 1go");
+                            if (k < Game.player[0].getHp()) {
+                                VivodHp1.setText(k + " + " + (Game.player[0].getHp() - k));
                             }
-                            ViviodHp2.setText(ControllerVhod.player[1].getHp() + "");
-                            System.out.println("sam" + ControllerVhod.player[0].hit());
-                            System.out.println(ControllerVhod.player[1].def(ControllerVhod.player[0].hit()));
+                            ViviodHp2.setText(Game.player[1].getHp() + "");
+                            System.out.println("sam" + Game.player[0].hit());
+                            System.out.println(Game.player[1].def(Game.player[0].hit()));
                         }
                         System.out.println("W");
                     } else {
@@ -147,26 +150,26 @@ public class ControllerLastFight {
                         Dmg1.setText("");
                         Dmg2.setText("");
                         String rez = "Конец";
-                        rez += ControllerVhod.player[1].getHp() == 0 ? ControllerVhod.player[0].getNikName() :
-                                ControllerVhod.player[1].getNikName();
+                        rez += Game.player[1].getHp() == 0 ? Game.player[0].getNikName() :
+                                Game.player[1].getNikName();
                         round.setText(rez + " Победил");
                         if (count != 0) {
 
-                            if (ControllerVhod.player[1].getHp() == 0) {
-                                ControllerVhod.player[1].setDengi(3 + ControllerVhod.player[0].getLevel() / 2);
-                                ControllerVhod.player[1].setLevel(2 + ControllerVhod.player[1].getLevel() / 6);
+                            if (Game.player[1].getHp() == 0) {
+                                Game.player[1].setDengi(Game.player[1].getDengi()+3 + Game.player[0].getLevel() / 2);
+                                Game.player[1].setLevel(Game.player[1].getLevel()+ 2 + Game.player[1].getLevel() / 6);
 
                             } else {
-                                ControllerVhod.player[1].setDengi(5 + ControllerVhod.player[0].getLevel());
-                                ControllerVhod.player[1].setLevel(3 + ControllerVhod.player[1].getLevel() / 3);
+                                Game.player[1].setDengi(Game.player[1].getDengi()+5 + Game.player[0].getLevel());
+                                Game.player[1].setLevel(Game.player[1].getLevel()+3 + Game.player[1].getLevel() / 3);
                             }
-                            if (ControllerVhod.player[0].getHp() == 0) {
-                                ControllerVhod.player[0].setDengi(3 + ControllerVhod.player[1].getLevel() / 2);
-                                ControllerVhod.player[0].setLevel(2 + ControllerVhod.player[0].getLevel() / 6);
+                            if (Game.player[0].getHp() == 0) {
+                                Game.player[0].setDengi(Game.player[0].getDengi()+3 + Game.player[1].getLevel() / 2);
+                                Game.player[0].setLevel(Game.player[0].getLevel()+ 2 + Game.player[1].getLevel() / 6);
 
                             } else {
-                                ControllerVhod.player[0].setDengi(5 + ControllerVhod.player[1].getLevel());
-                                ControllerVhod.player[0].setLevel(3 + ControllerVhod.player[0].getLevel() / 3);
+                                Game.player[0].setDengi(Game.player[0].getLevel()+5 + Game.player[1].getLevel());
+                                Game.player[0].setLevel(Game.player[0].getLevel()+3 + Game.player[1].getLevel() / 3);
                             }
                             count = 0;
 

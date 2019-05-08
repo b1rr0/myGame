@@ -83,5 +83,15 @@
             <Font name="Apple Braille" size="38.0" />
          </font>
       </Label>
+      <ImageView fx:id="Pl2pic1" fitHeight="76.0" fitWidth="81.0" layoutX="972.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/kisspng-shield-metal-icon-shield-png-element-5a9ca7b942cd33.2109843315202159932736.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Pl2pic11" fitHeight="76.0" fitWidth="81.0" layoutX="280.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/kisspng-shield-metal-icon-shield-png-element-5a9ca7b942cd33.2109843315202159932736.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

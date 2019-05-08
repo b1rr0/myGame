@@ -10,7 +10,6 @@ public class Db {
     private String dbClass = "com.mysql.jdbc.Driver";
     private String dbDriver = "jdbc:mysql://db4free.net:3306/b1rr0db";
     private Connection conn = null;
-
     public Connection connect() {
         //load driver
         try {
@@ -31,8 +30,6 @@ public class Db {
         }
         return conn;
     }
-
-
     public void signUpUser(int orujie, int shlem, int dospeh, int nogi, int breiser, int dengi, int lvl, String nikName, int pass, String klass) {
         String insert = "INSERT INTO " + Const.USET_USERS + " (" + Const.USET_ORUJ + "," + Const.USET_SHLEM + "," + Const.USET_DOSPEH
                 + "," + Const.USET_NOGI + "," + Const.USET_BREISER + "," + Const.USET_DENGI + "," + Const.USET_LVL
@@ -58,7 +55,8 @@ public class Db {
 
     public Human getUser(String nikName, String pass) {
         ResultSet resultSet = null;
-        String select = "SELECT * FROM " + Const.USET_USERS + " WHERE " + Const.USET_NIK + "='" + nikName + "' AND " + Const.USET_PASS + "=" + pass.hashCode();
+        String select = "SELECT * FROM " + Const.USET_USERS + " WHERE " + Const.USET_NIK + "='" + nikName + "' AND "
+                                                + Const.USET_PASS + "=" + pass.hashCode();
 
         Statement prSt = null;
         try {
@@ -82,7 +80,6 @@ public class Db {
                         e.printStackTrace();
                     }
                 }
-
                 if (rassa.equals("Tamplier")) {
                     try {
                         return new Tamplier(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
@@ -109,8 +106,6 @@ public class Db {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
-
-
                 }
             }
         } catch (SQLException e1) {
@@ -119,6 +114,20 @@ public class Db {
         return null;
     }
 
+    public  boolean checkFor(String nikName){
+        ResultSet resultSet = null;
+        String select = "SELECT * FROM " + Const.USET_USERS + " WHERE " + Const.USET_NIK + "='" + nikName + "'";
+        Statement prSt = null;
+        try {
+            prSt = connect().createStatement();
+            resultSet = prSt.executeQuery(select);
+            resultSet.next();
+            return resultSet == null?true:false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  false;
+    }
     public void upDate(Human human) {
         String update = "UPDATE " + Const.USET_USERS + " SET " + Const.USET_ORUJ + "=" + human.getOrujie() + ", "
                 + Const.USET_SHLEM + "=" + human.getShlem() + ", " + Const.USET_DOSPEH + "=" + human.getDospeh() + ", "

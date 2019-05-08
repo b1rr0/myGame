@@ -18,10 +18,10 @@
         </ImageView>
         <Label layoutX="479.0" layoutY="-3.0" text="SwordDuel" textFill="#c31c1c">
             <font>
-                <Font name="Bodoni 72 Bold" size="96.0" />
+                <Font name="Ninja Naruto" size="96.0" />
             </font>
         </Label>
-        <Button fx:id="buttonRegistrNewAcc" layoutX="346.0" layoutY="470.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="212.0" style="-fx-background-color: #18A0FF; -fx-background-radius: 10;" text="Регистрация" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="366.0">
+        <Button fx:id="buttonRegistrNewAcc" layoutX="327.0" layoutY="517.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="212.0" style="-fx-background-color: #18A0FF; -fx-background-radius: 10;" text="Регистрация" textOverrun="CENTER_ELLIPSIS">
             <font>
                 <Font name="Bodoni 72 Bold" size="26.0" />
             </font>
@@ -31,7 +31,7 @@
             <Font name="Bodoni 72 Bold" size="43.0" />
          </font>
       </PasswordField>
-      <TextField fx:id="newLogin" layoutX="254.0" layoutY="126.0" prefHeight="69.0" prefWidth="326.0" promptText="Логин" style="-fx-background-color: silver; -fx-background-radius: 10;">
+      <TextField fx:id="newLogin" layoutX="265.0" layoutY="121.0" prefHeight="69.0" prefWidth="326.0" promptText="Логин" style="-fx-background-color: silver; -fx-background-radius: 10;">
          <font>
             <Font size="38.0" />
          </font></TextField>
@@ -40,5 +40,10 @@
             <Font name="Bodoni 72 Bold" size="43.0" />
          </font>
       </PasswordField>
+      <Label fx:id="lableEror" layoutX="268.0" layoutY="424.0" prefHeight="110.0" prefWidth="1198.0" textFill="#c31c1c">
+         <font>
+            <Font name="Bodoni 72 Bold" size="42.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

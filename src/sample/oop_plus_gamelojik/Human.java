@@ -121,7 +121,7 @@ public abstract class Human {
     }
 
     public int MaxHp() {
-        return 40 + ((getLevel() / 3) * 50);
+        return 70+((getLevel()) * 50);
     }
 
     public abstract int hit();

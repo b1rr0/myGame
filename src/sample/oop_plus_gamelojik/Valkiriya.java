@@ -5,7 +5,7 @@ import java.util.Random;
 public class Valkiriya extends Human {
     public Valkiriya(int orujie, int shlem, int dospeh, int nogi, int ponoji, int dengi, int level, String nikName) {
         super(orujie, shlem, dospeh, nogi, ponoji, dengi, level, nikName);
-        setHp(200 + ((getLevel() / 3) * 70));
+        setHp(40 + ((getLevel()) * 50));
         setName("Valkiriya");
     }
 
@@ -18,7 +18,7 @@ public class Valkiriya extends Human {
             dProg++;
         }
         int s = rnd.nextInt(rez + getLevel() / 10) - (rez + getLevel() / 20);
-        return rez + (getLevel() / 3) * 5 + s;
+        return rez *2+ (getLevel()) + s;
     }
 
     public int getRezist() {

@@ -6,7 +6,7 @@ public class Samurai extends Human {
 
     public Samurai(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
         super(orujie, shlem, dospeh, nogi, breacer, dengi, level, nikName);
-        setHp(200 + ((getLevel() / 3) * 70));
+        setHp(40+ ((getLevel() ) * 50));
         setName("Samurai");
     }
 
@@ -19,7 +19,7 @@ public class Samurai extends Human {
             dProg++;
         }
         int s = rnd.nextInt(rez + getLevel() / 10) - (rez + getLevel() / 20);
-        return rez + (getLevel() / 3) * 5 + s;
+        return rez*2 + (getLevel())+ s;
     }
 
     public double getExtraCrit() {

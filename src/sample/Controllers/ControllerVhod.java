@@ -2,8 +2,6 @@ package sample.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -22,51 +20,41 @@ import static sample.Main.tearn;
 
 
 public class ControllerVhod {
-
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
     private AnchorPane mainField;
-
     @FXML
     private Button buttomVhod;
-
     @FXML
     private Button buttonRegistr;
-
     @FXML
     private PasswordField passwordField;
-
     @FXML
     private PasswordField loginField;
     @FXML
     private Label text1;
-
-   public  static Human player[] = new Human[2];
-
     Db db = new Db();
 
     @FXML
     void initialize() {
-
-
         buttomVhod.setOnAction(
-                event -> { text1.setText( " ");
+                event -> {
+                    text1.setText(" ");
                     String login = loginField.getText().trim();
                     String pass = passwordField.getText().trim();
-                    player[tearn] = null;
-                    player[tearn] = db.getUser(login, pass);
-
-                    db.upDate(player[tearn]);
-                    if (player[tearn] != null) {
+                    Game.player[tearn] = null;
+                    Game.player[tearn] = db.getUser(login, pass);
+                    db.upDate(Game.player[tearn]);
+                    if (Game.player[tearn] != null) {
                         System.out.println("acces");
                         buttomVhod.getScene().getWindow().hide();
                         openNew("/sample/Sampless/sampleUpdate.fxml");
-                    }else   {text1.setText( "Неправильный логин или пароль");}
+                    } else {
+                        text1.setText("Неправильный логин или пароль");
+                    }
                 }
         );
         buttonRegistr.setOnAction(
