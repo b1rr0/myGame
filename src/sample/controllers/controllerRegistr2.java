@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,9 +14,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import sample.DataBase.Db;
+import sample.dataBase.dataBase;
 
-public class ControllerRegistr2 {
+public class controllerRegistr2 {
 
     @FXML
     private ResourceBundle resources;
@@ -44,14 +44,14 @@ public class ControllerRegistr2 {
 
     static String newpas;
     static String newlog;
-    Db db = new Db();
+    dataBase dataBase = new dataBase();
 
     @FXML
     void initialize() {
         buttonRegistrNewAcc.setOnAction(
                 event ->
                 {
-                    if (!db.checkFor(newLogin.getText())) {
+                    if (!dataBase.checkFor(newLogin.getText())) {
                         if ((newPass.getText().equals(newPass1.getText())) && (newPass.getText().length() > 5) && (newLogin.getText().length() > 4)) {
                             newpas = newPass.getText();
                             newlog = newLogin.getText();

@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,11 +14,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import sample.oop_plus_gamelojik.Game;
+import sample.oop_plus_gamelojik.game;
 
-import static sample.Main.tearn;
-
-public class ControllerPeredBoem {
+public class controllerPeredBoem {
 
 
     @FXML
@@ -82,15 +80,15 @@ public class ControllerPeredBoem {
     @FXML
     void initialize() {
 
-        VivodOrujie.setText("Lv." + Game.player[0].getOrujie() + "  =Оружие= Lv." + Game.player[1].getOrujie());
-        VivodShlem.setText("Lv." + Game.player[0].getShlem() + "  =Шлем=   Lv." + Game.player[1].getShlem());
-        VivodBronya.setText("Lv." + Game.player[0].getDospeh() + "  =Броня=  Lv." + Game.player[1].getDospeh());
-        VivodBreicer.setText("Lv." + Game.player[0].getBreacer() + "  =Наручи= Lv." + Game.player[1].getBreacer());
-        VivodNogi.setText("Lv." + Game.player[0].getNogi() + "  =Ноги=   Lv." + Game.player[1].getNogi());
-        VivodLvl1.setText("Lv." + Game.player[0].getLevel());
-        VivodLvl2.setText("Lv." + Game.player[1].getLevel());
-        VivodNogi1.setText(Game.player[1].Osobennost());
-        VivodNogi11.setText(Game.player[0].Osobennost());
+        VivodOrujie.setText("Lv." + game.player[0].getSword() + "  =Оружие= Lv." + game.player[1].getSword());
+        VivodShlem.setText("Lv." + game.player[0].getHelmet() + "  =Шлем=   Lv." + game.player[1].getHelmet());
+        VivodBronya.setText("Lv." + game.player[0].getHelmet() + "  =Броня=  Lv." + game.player[1].getHelmet());
+        VivodBreicer.setText("Lv." + game.player[0].getBreacer() + "  =Наручи= Lv." + game.player[1].getBreacer());
+        VivodNogi.setText("Lv." + game.player[0].getLeggins() + "  =Ноги=   Lv." + game.player[1].getLeggins());
+        VivodLvl1.setText("Lv." + game.player[0].getLevel());
+        VivodLvl2.setText("Lv." + game.player[1].getLevel());
+        VivodNogi1.setText(game.player[1].properties());
+        VivodNogi11.setText(game.player[0].properties());
         Image imgValk = new Image(getClass().getResourceAsStream("../img/valkiriya.png"));
         Image imgTampl = new Image(getClass().getResourceAsStream("../img/tamplier.png"));
         Image imgSam = new Image(getClass().getResourceAsStream("../img/samurai.png"));
@@ -100,26 +98,26 @@ public class ControllerPeredBoem {
         Image imgSamZer = new Image(getClass().getResourceAsStream("../img/SamuraiZerkalo.png"));
         Image imgBerszer = new Image(getClass().getResourceAsStream("../img/BersZerkalo.png"));
 
-        if (Game.player[1].getName().equals("Bers"))
+        if (game.player[1].getName().equals("Bers"))
             Pl2pic.setImage(imgBers);
-        if (Game.player[1].getName().equals("Tamplier"))
+        if (game.player[1].getName().equals("Tamplier"))
             Pl2pic.setImage(imgTampl);
-        if (Game.player[1].getName().equals("Samurai"))
+        if (game.player[1].getName().equals("Samurai"))
             Pl2pic.setImage(imgSam);
-        if (Game.player[1].getName().equals("Valkiriya"))
+        if (game.player[1].getName().equals("Valkiriya"))
             Pl2pic.setImage(imgValk);
 
-        if (Game.player[0].getName().equals("Bers"))
+        if (game.player[0].getName().equals("Bers"))
             Pl1pic.setImage(imgBerszer);
-        if (Game.player[0].getName().equals("Tamplier"))
+        if (game.player[0].getName().equals("Tamplier"))
             Pl1pic.setImage(imgTamplZer);
-        if (Game.player[0].getName().equals("Samurai"))
+        if (game.player[0].getName().equals("Samurai"))
             Pl1pic.setImage(imgSamZer);
-        if (Game.player[0].getName().equals("Valkiriya"))
+        if (game.player[0].getName().equals("Valkiriya"))
             Pl1pic.setImage(imgValkZer);
 
-        Pl2nikc.setText(Game.player[1].getNikName());
-        Pl2nikc1.setText(Game.player[0].getNikName());
+        Pl2nikc.setText(game.player[1].getNikName());
+        Pl2nikc1.setText(game.player[0].getNikName());
         buttomVhod.setOnAction(
                 event -> {
 

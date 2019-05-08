@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,12 +13,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import sample.DataBase.Db;
+import sample.dataBase.dataBase;
 import sample.oop_plus_gamelojik.*;
 
 import static sample.Main.tearn;
 
-public class ControllerChouseHero {
+public class controllerChouseHero {
 
     @FXML
     private ResourceBundle resources;
@@ -42,18 +42,18 @@ public class ControllerChouseHero {
     private RadioButton but1 = new RadioButton("Samuira");
 
     @FXML
-    private RadioButton but2 = new RadioButton("Valkiriya");
+    private RadioButton but2 = new RadioButton("valkiriya");
 
     @FXML
-    private RadioButton but3 = new RadioButton("Tamplier");
+    private RadioButton but3 = new RadioButton("tamplier");
 
     @FXML
-    private RadioButton but4 = new RadioButton("Bers");
+    private RadioButton but4 = new RadioButton("bers");
 
 
     @FXML
     void initialize() {
-        Db db = new Db();
+        dataBase dataBase = new dataBase();
 
 
         ToggleGroup group = new ToggleGroup();
@@ -76,20 +76,20 @@ public class ControllerChouseHero {
         buttomVhod.setOnAction(
                 event -> {
                     if (but1.isSelected())
-                        Game.player[tearn] = new Samurai(1, 1, 1, 1, 1, 15, 1,
-                                ControllerRegistr2.newlog);
+                        game.player[tearn] = new samurai(1, 1, 1, 1, 1, 15, 1,
+                                controllerRegistr2.newlog);
                     if (but2.isSelected())
-                        Game.player[tearn] = new Valkiriya(1, 1, 1, 1, 1, 15, 1,
-                                ControllerRegistr2.newlog);
+                        game.player[tearn] = new valkiriya(1, 1, 1, 1, 1, 15, 1,
+                                controllerRegistr2.newlog);
                     if (but3.isSelected())
-                        Game.player[tearn] = new Tamplier(1, 1, 1, 1, 1, 15, 1,
-                                ControllerRegistr2.newlog);
+                        game.player[tearn] = new tamplier(1, 1, 1, 1, 1, 15, 1,
+                                controllerRegistr2.newlog);
                     if (but4.isSelected())
-                        Game.player[tearn] = new Bers(1, 1, 1, 1, 1, 15, 1,
-                                ControllerRegistr2.newlog);
+                        game.player[tearn] = new bers(1, 1, 1, 1, 1, 15, 1,
+                                controllerRegistr2.newlog);
 
-                    db.signUpUser(1, 1, 1, 1, 1, 15, 1, ControllerRegistr2.newlog,
-                            (int) ControllerRegistr2.newpas.hashCode(), Game.player[tearn].getName());
+                    dataBase.signUpUser(1, 1, 1, 1, 1, 15, 1, controllerRegistr2.newlog,
+                            (int) controllerRegistr2.newpas.hashCode(), game.player[tearn].getName());
 
                     System.out.println("acces");
                     buttomVhod.getScene().getWindow().hide();

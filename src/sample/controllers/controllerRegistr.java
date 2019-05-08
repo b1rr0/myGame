@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample.controllers;
 
 
 import java.io.IOException;
@@ -17,7 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.SendMessageMail;
 
-public class ControllerRegistr {
+public class controllerRegistr {
 
     @FXML
     private ResourceBundle resources;

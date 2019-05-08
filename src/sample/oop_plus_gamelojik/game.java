@@ -2,12 +2,11 @@
 package sample.oop_plus_gamelojik;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import static sample.Main.tearn;
 
-public class Game {
-    public  static Human player[] = new Human[2];
+public class game {
+    public  static human player[] = new human[2];
     static Random rnd = new Random(System.currentTimeMillis());
 
     public static int CoinFLip() {
@@ -25,7 +24,7 @@ public class Game {
 
     static int count = 0;
 
-    public static String Round(Human pl1, Human pl2) {
+    public static String Round(human pl1, human pl2) {
         //try {
           //  TimeUnit.SECONDS.sleep(1);
        // } catch (InterruptedException e) {
@@ -45,7 +44,7 @@ public class Game {
             //урон
             pl2.setHp(pl2.getHp() - rez > 0 ? pl2.getHp() - rez : 0);
             //лечение
-            pl1.setHp(pl1.getHp() + pl1.Vampir(hit) > pl1.MaxHp() ? pl1.MaxHp() : (int) (pl1.getHp() + pl1.Vampir(rez)));
+            pl1.setHp(pl1.getHp() + pl1.vampirism(hit) > pl1.MaxHp() ? pl1.MaxHp() : (int) (pl1.getHp() + pl1.vampirism(rez)));
             if (pl1.getBush() >= rnd.nextInt(1000)) {
                 tearn = 2;
                 return rez + " Оглушение";
@@ -66,7 +65,7 @@ public class Game {
             //урон
             pl1.setHp(pl1.getHp() - rez > 0 ? pl1.getHp() - rez : 0);
             //лечение
-            pl2.setHp(pl2.getHp() + pl2.Vampir(hit) > pl2.MaxHp() ? pl2.MaxHp() : (int) (pl2.getHp() + pl2.Vampir(rez)));
+            pl2.setHp(pl2.getHp() + pl2.vampirism(hit) > pl2.MaxHp() ? pl2.MaxHp() : (int) (pl2.getHp() + pl2.vampirism(rez)));
             if (pl2.getBush() >= rnd.nextInt(1000)) {
                 tearn = 1;
                 return rez + " Оглушение";

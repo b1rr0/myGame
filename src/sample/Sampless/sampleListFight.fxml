@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #0F0646;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerLastFight">
+<AnchorPane fx:id="mainField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #0F0646;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.controllerLastFight">
     <children>
         <ImageView fx:id="Round" fitHeight="900.0" fitWidth="1440.0" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -83,14 +83,14 @@
             <Font name="Apple Braille" size="38.0" />
          </font>
       </Label>
-      <ImageView fx:id="Pl2pic1" fitHeight="76.0" fitWidth="81.0" layoutX="972.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pickSword0" fitHeight="178.0" fitWidth="175.0" layoutX="275.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/kisspng-shield-metal-icon-shield-png-element-5a9ca7b942cd33.2109843315202159932736.jpg" />
+            <Image url="@../img/anotherShield.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Pl2pic11" fitHeight="76.0" fitWidth="81.0" layoutX="280.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pickSword1" fitHeight="178.0" fitWidth="175.0" layoutX="859.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/kisspng-shield-metal-icon-shield-png-element-5a9ca7b942cd33.2109843315202159932736.jpg" />
+            <Image url="@../img/anotherShield.png" />
          </image>
       </ImageView>
     </children>

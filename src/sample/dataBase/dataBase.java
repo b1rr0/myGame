@@ -1,10 +1,10 @@
-package sample.DataBase;
+package sample.dataBase;
 
 import sample.oop_plus_gamelojik.*;
 
 import java.sql.*;
 
-public class Db {
+public class dataBase {
     private String user = "b1rr0db";
     private String pass = "zifibe02";
     private String dbClass = "com.mysql.jdbc.Driver";
@@ -30,10 +30,12 @@ public class Db {
         }
         return conn;
     }
-    public void signUpUser(int orujie, int shlem, int dospeh, int nogi, int breiser, int dengi, int lvl, String nikName, int pass, String klass) {
-        String insert = "INSERT INTO " + Const.USET_USERS + " (" + Const.USET_ORUJ + "," + Const.USET_SHLEM + "," + Const.USET_DOSPEH
-                + "," + Const.USET_NOGI + "," + Const.USET_BREISER + "," + Const.USET_DENGI + "," + Const.USET_LVL
-                + "," + Const.USET_NIK + "," + Const.USET_PASS + "," + Const.USET_KlASS + ")" +
+    public void signUpUser(int orujie, int shlem, int dospeh, int nogi, int breiser, int dengi, int lvl, String nikName,
+                           int pass, String klass) {
+        String insert = "INSERT INTO " + constMy.USET_USERS + " (" + constMy.USET_ORUJ + "," + constMy.USET_SHLEM + "," +
+                constMy.USET_DOSPEH
+                + "," + constMy.USET_NOGI + "," + constMy.USET_BREISER + "," + constMy.USET_DENGI + "," + constMy.USET_LVL
+                + "," + constMy.USET_NIK + "," + constMy.USET_PASS + "," + constMy.USET_KlASS + ")" +
                 "VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement prSt = connect().prepareStatement(insert);
@@ -53,10 +55,10 @@ public class Db {
         }
     }
 
-    public Human getUser(String nikName, String pass) {
+    public human getUser(String nikName, String pass) {
         ResultSet resultSet = null;
-        String select = "SELECT * FROM " + Const.USET_USERS + " WHERE " + Const.USET_NIK + "='" + nikName + "' AND "
-                                                + Const.USET_PASS + "=" + pass.hashCode();
+        String select = "SELECT * FROM " + constMy.USET_USERS + " WHERE " + constMy.USET_NIK + "='" + nikName + "' AND "
+                                                + constMy.USET_PASS + "=" + pass.hashCode();
 
         Statement prSt = null;
         try {
@@ -65,7 +67,8 @@ public class Db {
             resultSet.next();
             if (resultSet != null) {
                 String rassa = null;
-                rassa = resultSet.getString(Const.USET_KlASS);
+                rassa = resultSet.getString(constMy.USET_KlASS);
+                System.out.println(rassa);
                 try {
                     rassa = resultSet.getString(8);
                 } catch (SQLException e) {
@@ -73,7 +76,7 @@ public class Db {
                 }
                 if (rassa.equals("Bers")) {
                     try {
-                        return new Bers(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
+                        return new bers(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
                                 resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7),
                                 resultSet.getString(9));
                     } catch (SQLException e) {
@@ -82,7 +85,7 @@ public class Db {
                 }
                 if (rassa.equals("Tamplier")) {
                     try {
-                        return new Tamplier(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
+                        return new tamplier(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
                                 resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7),
                                 resultSet.getString(9));
                     } catch (SQLException e) {
@@ -91,7 +94,7 @@ public class Db {
                 }
                 if (rassa.equals("Samurai")) {
                     try {
-                        return new Samurai(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
+                        return new samurai(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
                                 resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7),
                                 resultSet.getString(9));
                     } catch (SQLException e) {
@@ -100,7 +103,7 @@ public class Db {
                 }
                 if (rassa.equals("Valkiriya")) {
                     try {
-                        return new Valkiriya(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
+                        return new valkiriya(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),
                                 resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6), resultSet.getInt(7),
                                 resultSet.getString(9));
                     } catch (SQLException e) {
@@ -116,7 +119,7 @@ public class Db {
 
     public  boolean checkFor(String nikName){
         ResultSet resultSet = null;
-        String select = "SELECT * FROM " + Const.USET_USERS + " WHERE " + Const.USET_NIK + "='" + nikName + "'";
+        String select = "SELECT * FROM " + constMy.USET_USERS + " WHERE " + constMy.USET_NIK + "='" + nikName + "'";
         Statement prSt = null;
         try {
             prSt = connect().createStatement();
@@ -128,12 +131,12 @@ public class Db {
         }
         return  false;
     }
-    public void upDate(Human human) {
-        String update = "UPDATE " + Const.USET_USERS + " SET " + Const.USET_ORUJ + "=" + human.getOrujie() + ", "
-                + Const.USET_SHLEM + "=" + human.getShlem() + ", " + Const.USET_DOSPEH + "=" + human.getDospeh() + ", "
-                + Const.USET_NOGI + "=" + human.getNogi() + ", " + Const.USET_BREISER + "=" + human.getBreacer() + ", "
-                + Const.USET_DENGI + "=" + human.getDengi() + ", " + Const.USET_LVL + "=" + human.getLevel() + " WHERE "
-                + Const.USET_NIK + "='" + human.getNikName() + "'";
+    public void upDate(human human) {
+        String update = "UPDATE " + constMy.USET_USERS + " SET " + constMy.USET_ORUJ + "=" + human.getSword() + ", "
+                + constMy.USET_SHLEM + "=" + human.getHelmet() + ", " + constMy.USET_DOSPEH + "=" + human.getArmor() + ", "
+                + constMy.USET_NOGI + "=" + human.getLeggins() + ", " + constMy.USET_BREISER + "=" + human.getBreacer() + ", "
+                + constMy.USET_DENGI + "=" + human.getMoney() + ", " + constMy.USET_LVL + "=" + human.getLevel() + " WHERE "
+                + constMy.USET_NIK + "='" + human.getNikName() + "'";
         System.out.println(update);
         Statement statement =null;
         try {

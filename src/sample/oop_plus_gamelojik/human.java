@@ -1,62 +1,62 @@
 package sample.oop_plus_gamelojik;
 
-public abstract class Human {
+public abstract class human {
 
-    private int orujie;
-    private int shlem;
-    private int dospeh;
-    private int nogi;
+    private int sword;
+    private int helmet;
+    private int armor;
+    private int leggings;
     private int breacer;
-    private int dengi;
-    private int Hp;
+    private int money;
+    private int hp;
     private String name;
     private String nikName;
     private int level;
 
 
-    public Human(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
-        this.orujie = orujie;
-        this.shlem = shlem;
-        this.dospeh = dospeh;
-        this.nogi = nogi;
+    public human(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
+        this.sword = orujie;
+        this.helmet = shlem;
+        this.armor = dospeh;
+        this.leggings = nogi;
         this.breacer = breacer;
-        this.dengi = dengi;
+        this.money = dengi;
         this.level = level;
         this.nikName = nikName;
     }
 
-    public Human(String nikName) {
-        this.orujie = 1;
-        this.shlem = 1;
-        this.dospeh = 1;
-        this.nogi = 1;
+    public human(String nikName) {
+        this.sword = 1;
+        this.helmet = 1;
+        this.armor = 1;
+        this.leggings = 1;
         this.breacer = 1;
         this.level = 1;
         this.nikName = nikName;
     }
 
-    public int getOrujie() {
-        return orujie;
+    public int getSword() {
+        return sword;
     }
 
-    public int getShlem() {
-        return shlem;
+    public int getHelmet() {
+        return helmet;
     }
 
-    public int getDospeh() {
-        return dospeh;
+    public int getArmor() {
+        return armor;
     }
-
-    public int getNogi() {
-        return nogi;
+    
+    public int getLeggins() {
+        return leggings;
     }
 
     public int getBreacer() {
         return breacer;
     }
 
-    public int getDengi() {
-        return dengi;
+    public int getMoney() {
+        return money;
     }
 
     public int getLevel() {
@@ -64,7 +64,7 @@ public abstract class Human {
     }
 
     public int getHp() {
-        return Hp;
+        return hp;
     }
 
     public String getName() {
@@ -72,11 +72,11 @@ public abstract class Human {
     }
 
     public void setHp(int Hp) {
-        this.Hp = Hp;
+        this.hp = Hp;
     }
 
-    public void setDengi(int dengi) {
-        this.dengi = dengi;
+    public void setMoney(int money) {
+        this.money = money;
     }
 
     public void setLevel(int level) {
@@ -91,20 +91,20 @@ public abstract class Human {
         return nikName;
     }
 
-    public void upOrujie() {
-        this.orujie++;
+    public void upSword() {
+        this.sword++;
     }
-
+    
     public void upShlem() {
-        this.shlem++;
+        this.helmet++;
     }
 
     public void upDospeh() {
-        this.dospeh++;
+        this.armor++;
     }
 
     public void upNogi() {
-        this.nogi++;
+        this.leggings++;
     }
 
     public void upBreacer() {
@@ -112,11 +112,11 @@ public abstract class Human {
     }
 
     public void buy(int summa) {
-        this.dengi -= summa;
+        this.money -= summa;
 
     }
 
-    public double Vampir(int i) {
+    public double vampirism(int i) {
         return 0;
     }
 
@@ -130,7 +130,7 @@ public abstract class Human {
 
     public abstract int getBush();
 
-    public abstract String Osobennost();
+    public abstract String properties();
 
     public int getMiss() {
         return getBreacer();

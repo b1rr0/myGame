@@ -1,6 +1,6 @@
-package sample.DataBase;
+package sample.dataBase;
 
-public class Const{
+public class constMy {
     public static final String USET_USERS="users";
     public static final String USET_ORUJ="orujie";
     public static final String USET_SHLEM="shlem";

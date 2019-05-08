@@ -1,10 +1,10 @@
 package sample.oop_plus_gamelojik;
 import java.util.Random;
 
-public class Samurai extends Human {
+public class samurai extends human {
     final String name = "Samurai";
 
-    public Samurai(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
+    public samurai(int orujie, int shlem, int dospeh, int nogi, int breacer, int dengi, int level, String nikName) {
         super(orujie, shlem, dospeh, nogi, breacer, dengi, level, nikName);
         setHp(40+ ((getLevel() ) * 50));
         setName("Samurai");
@@ -14,7 +14,7 @@ public class Samurai extends Human {
     public int getDmg() {
         int rez = 10;
         int dProg = 8;
-        for (int i = 1; i <= this.getDospeh(); i++) {
+        for (int i = 1; i <= this.getSword(); i++) {
             rez += dProg++;
             dProg++;
         }
@@ -30,7 +30,7 @@ public class Samurai extends Human {
     public int getRezist() {
         int rez = 0;
         int dProg = 2;
-        for (int i = 1; i <= this.getDospeh(); i++) {
+        for (int i = 1; i <= this.getArmor(); i++) {
             rez += dProg++;
             dProg++;
         }
@@ -41,7 +41,7 @@ public class Samurai extends Human {
     public int getCritChanse() {
         int rez = 100;
         int dProg = 7;
-        for (int i = 1; i <= this.getOrujie(); i++) {
+        for (int i = 1; i <= this.getSword(); i++) {
             rez += dProg;
             dProg += 7;
         }
@@ -61,7 +61,7 @@ public class Samurai extends Human {
     public int getCritRezist() {
         int rez = 0;
         int dProg = 3;
-        for (int i = 1; i <= this.getOrujie(); i++) {
+        for (int i = 1; i <= this.getSword(); i++) {
             rez += dProg++;
         }
         return 100 - rez;
@@ -101,7 +101,7 @@ public class Samurai extends Human {
     }
 
     @Override
-    public String Osobennost() {
+    public String properties() {
         return "Шанс убить " + ((double) getExtraCrit()) / 10 + "%";
     }
 }
