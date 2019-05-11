@@ -38,7 +38,7 @@ public class game {
             int hit = pl1.hit();
             if (hit == 642077) {
                 pl2.setHp(0);
-                return "Лешился головы";
+                return "Лишился головы";
             }
             int rez = (int) pl2.def(hit);
             //урон
@@ -59,7 +59,7 @@ public class game {
             int hit = pl2.hit();
             if (hit == 642077) {
                 pl1.setHp(0);
-                return "Лешился головы";
+                return "Лишился головы";
             }
             int rez = (int) pl1.def(hit);
             //урон

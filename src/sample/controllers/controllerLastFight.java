@@ -110,13 +110,11 @@ public class controllerLastFight {
         VivodHp1.setText(game.player[0].getHp() + "");
         ViviodHp2.setText(game.player[1].getHp() + "");
 
-
         Finish.setOnAction(event -> {
             if (game.player[0].getHp() == 0 || game.player[1].getHp() == 0) {
                 dataBase.upDate(game.player[0]);
                 dataBase.upDate(game.player[1]);
                 Finish.getScene().getWindow().hide();
-
             } else {
                 Pl2nikc.setText("Игра еще не окончена");
             }

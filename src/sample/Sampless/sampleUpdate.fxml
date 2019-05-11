@@ -89,7 +89,7 @@
             <Font name="Bodoni 72 Bold" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="bronyaText12" layoutX="243.0" layoutY="465.0" prefHeight="58.0" prefWidth="600.0" text="Увеличивает укланение" textFill="#69ebae">
+      <Label fx:id="bronyaText12" layoutX="243.0" layoutY="465.0" prefHeight="58.0" prefWidth="600.0" text="Увеличивает уклонение" textFill="#69ebae">
          <font>
             <Font name="Bodoni 72 Bold" size="23.0" />
          </font>

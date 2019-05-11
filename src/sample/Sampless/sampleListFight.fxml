@@ -58,7 +58,7 @@
             <Font name="Comic Sans MS" size="48.0" />
          </font>
       </Label>
-      <Label fx:id="Dmg1" layoutX="835.0" layoutY="160.0" prefHeight="79.0" prefWidth="548.0" rotate="-23.4" textFill="#b21818">
+      <Label fx:id="Dmg1" layoutX="835.0" layoutY="160.0" prefHeight="79.0" prefWidth="548.0" rotate="-23.4" text="ojkljkljkljlkjlk" textFill="#b21818">
          <font>
             <Font name="Comic Sans MS" size="48.0" />
          </font>
@@ -83,12 +83,12 @@
             <Font name="Apple Braille" size="38.0" />
          </font>
       </Label>
-      <ImageView fx:id="pickSword0" fitHeight="178.0" fitWidth="175.0" layoutX="275.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pickSword0" fitHeight="210.0" fitWidth="200.0" layoutX="290.0" layoutY="310.0" pickOnBounds="true">
          <image>
             <Image url="@../img/anotherShield.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="pickSword1" fitHeight="178.0" fitWidth="175.0" layoutX="859.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pickSword1" fitHeight="210.0" fitWidth="200.0" layoutX="856.0" layoutY="310.0" pickOnBounds="true">
          <image>
             <Image url="@../img/anotherShield.png" />
          </image>
